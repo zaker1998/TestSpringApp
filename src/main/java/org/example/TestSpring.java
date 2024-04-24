@@ -14,9 +14,10 @@ public class TestSpring {
         MusicPlayer musicPlayer = new MusicPlayer(music);*/
 
         //With dependency injection = no direct initialization of MusicPlayer in class
-        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
-
-        musicPlayer.playSong();
+        MusicPlayer musicPlayerSetterInjection = context.getBean("musicPlayerBean", MusicPlayer.class);
+        musicPlayerSetterInjection.playSong();
+        System.out.println(musicPlayerSetterInjection.getName());
+        System.out.println(musicPlayerSetterInjection.getVolume());
 
         context.close();
     }

@@ -1,9 +1,9 @@
 package org.example;
 
-public class ClassicalMusic implements Music {
+public class PopMusic implements Music{
     @Override
-    public String getSong(){
-        return "Vivaldi - Four Seasons";
+    public String getSong() {
+        return "Tailor Swift";
     }
 
     @Override

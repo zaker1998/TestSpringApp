@@ -5,4 +5,9 @@ public class RockMusic implements Music{
     public String getSong() {
         return "ACDC - TNT";
     }
+
+    @Override
+    public String toString() {
+        return getSong();
+    }
 }
