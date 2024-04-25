@@ -1,11 +1,8 @@
-package org.example;
-
-import org.springframework.stereotype.Component;
+package org.example.musics;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class ClassicalMusic implements Music {
 
     List<String> names = new ArrayList<String>();
@@ -17,8 +14,13 @@ public class ClassicalMusic implements Music {
     }
 
     @Override
-    public String getSong(int randomSongNumber){
-        return names.get(randomSongNumber);
+    public String getSong(){
+        return names.toString();
+    }
+
+    @Override
+    public String toString() {
+        return getSong();
     }
 
 
