@@ -2,22 +2,16 @@ package org.example;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Arrays;
+
 public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
+        Computer computer = context.getBean("computer", Computer.class);
 
-        //Without dependency injection
-        /*Music music = context.getBean("musicBean", Music.class);
-
-        MusicPlayer musicPlayer = new MusicPlayer(music);*/
-
-        //With dependency injection = no direct initialization of MusicPlayer in class
-        MusicPlayer musicPlayerSetterInjection = context.getBean("musicPlayerBean", MusicPlayer.class);
-        musicPlayerSetterInjection.playSong();
-        System.out.println(musicPlayerSetterInjection.getName());
-        System.out.println(musicPlayerSetterInjection.getVolume());
+        System.out.println(computer.toString());
 
         context.close();
     }
